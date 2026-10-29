@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cars Radar</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Cars Radar</h1>
+    <div class="status">
+      <span id="conn" class="pill">connecting…</span>
+      <span id="stats" class="stats"></span>
+    </div>
+  </header>
+  <main>
+    <section class="viewer">
+      <canvas id="view"></canvas>
+      <div id="placeholder" class="placeholder">Waiting for video…</div>
+    </section>
+    <aside class="cars">
+      <h2>Cars in view <span id="car-count"></span></h2>
+      <ul id="car-list"></ul>
+    </aside>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

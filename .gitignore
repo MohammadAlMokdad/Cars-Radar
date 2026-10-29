@@ -1,0 +1,65 @@
+# Python environments, caches and build output
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Local settings (keep the template)
+.env
+.env.*
+!.env.example
+
+# Runtime data stays on the machine that captured it:
+# clips, recordings, crops, calibration, databases and downloaded model weights.
+data/
+
+# Model weights and exports (downloaded or generated locally)
+*.pt
+*.pth
+*.onnx
+*.engine
+*.torchscript
+*.safetensors
+
+# Video and captures
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.m4v
+recordings/
+
+# Databases and logs
+*.db
+*.sqlite
+*.sqlite3
+*.log
+logs/
+
+# MediaMTX is downloaded per machine; only the relay config is tracked.
+mediamtx/*
+!mediamtx/mediamtx.yml
+
+# Downloaded binaries and archives
+*.exe
+*.dll
+*.zip
+*.tar.gz
+
+# Editors, OS and AI-assistant files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+.claude/

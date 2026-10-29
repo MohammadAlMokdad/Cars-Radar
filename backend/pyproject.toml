@@ -1,0 +1,36 @@
+[project]
+name = "carsradar"
+version = "0.1.0"
+description = "Live car detection, tracking, speed, plate and make/model overlay for an iPhone telephoto feed"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "av>=14",
+    "numpy",
+    "opencv-python",
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic-settings",
+    "torch",
+    "torchvision",
+    "ultralytics",
+]
+
+[project.scripts]
+carsradar = "carsradar.main:main"
+
+[dependency-groups]
+dev = ["pytest"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# RTX 50-series (Blackwell) GPUs need CUDA 12.8+ builds of PyTorch.
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu128" }]
+torchvision = [{ index = "pytorch-cu128" }]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true

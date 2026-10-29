@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Blackmagic Camera custom streaming service for the Cars Radar laptop.
+     Import on the iPhone: Blackmagic Camera > Settings > Live Stream > import service.
+     If the laptop's Wi-Fi IP changes (check with ipconfig), update both URLs and re-import. -->
+<streaming>
+    <service>
+        <name>Cars Radar Laptop</name>
+        <servers>
+            <server>
+                <name>Laptop SRT</name>
+                <url>srt://LAPTOP_IP:8890?streamid=publish:live/cam</url>
+            </server>
+            <server>
+                <name>Laptop RTMP</name>
+                <url>rtmp://LAPTOP_IP:1935/live</url>
+            </server>
+        </servers>
+        <profiles>
+            <profile>
+                <name>4K Max</name>
+                <config resolution="4K">
+                    <bitrate>35000000</bitrate>
+                    <audio-bitrate>128000</audio-bitrate>
+                    <keyframe-interval>1</keyframe-interval>
+                </config>
+            </profile>
+            <profile>
+                <name>4K Standard</name>
+                <config resolution="4K">
+                    <bitrate>20000000</bitrate>
+                    <audio-bitrate>128000</audio-bitrate>
+                    <keyframe-interval>1</keyframe-interval>
+                </config>
+            </profile>
+            <profile>
+                <name>HD Backup</name>
+                <config resolution="HD">
+                    <bitrate>10000000</bitrate>
+                    <audio-bitrate>128000</audio-bitrate>
+                    <keyframe-interval>1</keyframe-interval>
+                </config>
+            </profile>
+        </profiles>
+    </service>
+</streaming>
